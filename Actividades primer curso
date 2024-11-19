@@ -1,0 +1,10 @@
+//TABLAS DISPONIBLES (productos_vendidos, clientes, productos)
+
+//Lista de los ID'S unicos de productos vendidos.
+SELECT DISTINCT producto_ID
+FROM productos_vendidos;
+
+//IDENTIFICA los clientes que se registraron antes del 2020
+SELECT cliente_id, nombre_cliente, apellido_cliente, fecha_de_registro
+FROM clientes
+WHERE  fecha_de_registro < '2020-01-01';
