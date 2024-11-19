@@ -8,3 +8,37 @@ FROM productos_vendidos;
 SELECT cliente_id, nombre_cliente, apellido_cliente, fecha_de_registro
 FROM clientes
 WHERE  fecha_de_registro < '2020-01-01';
+
+
+
+
+//Crea la tabla de funcionarios con los campos id, nombre, cargo, departamento, fecha de contratacion y salario.
+
+CREATE TABLE Funcionarios 
+(ID VARCHAR (5) PRIMARY KEY,
+nombre VARCHAR (250),
+cargo VARCHAR (80),
+departamento VARCHAR (40),
+fecha_de_contratacion DATE,
+salario DECIMAL (10,2)
+);
+
+//Inserta los datos dados en la tabla
+
+INSERT INTO Funcionarios( ID,
+nombre,
+cargo,
+departamento,
+fecha_de_contratacion,
+salario)
+
+VALUES(
+'32D',
+'Juan Silva',
+'Desarrollador de software'.
+'TI',
+'2023-10-24',
+'6000,00');
+
+
+
