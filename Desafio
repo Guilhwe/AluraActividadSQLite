@@ -105,7 +105,7 @@ CREATE TABLE notas
 (id_nota INT PRIMARY KEY,
  id_alumno INT,
  id_asignatura INT,
- valor_nota FLOAT(2,2),
+ valor_nota DECIMAL (5,2),
  fecha_evaluacion DATE	,
  FOREIGN KEY (id_asignatura) REFERENCES asignaturas (id_asignatura),
  FOREIGN KEY (id_alumno) REFERENCES alumnos(id_alumno)
