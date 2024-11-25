@@ -66,6 +66,19 @@ CREATE TABLE clases
  id_tutor int,
  FOREIGN KEY (id_tutor) REFERENCES profesores (id_profesor)
  );
+
+//*Tabela "Turma_Disciplinas" armazenara os dados das associações entre turmas e disciplinas:
+
+ID da Turma: Uma lista de chaves estrangeiras que fazem referência as turmas existentes.
+ID das Disciplinas: Uma lista de chaves estrangeiras que fazem referência às disciplinas ministradas na turma.*//
+
+CREATE TABLE clases_asignaturas
+(id_clase INT,
+ id_asignatura INT,
+ PRIMARY KEY (id_clase, id_asignatura),
+ FOREIGN KEY (id_clase) REFERENCES clases (id_clase),
+ FOREIGN KEY (id_asignatura) REFERENCES asignaturas(id_asignatura)
+ );
  
  
  
