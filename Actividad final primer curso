@@ -43,7 +43,7 @@ where departamento ='TI';
 
 // Selecione os nomes e salários dos funcionários que trabalham no departamento de "Vendas" e cujo salário seja maior ou igual a 6000.
 
-SELECT nombre AND salario FROM funcionarios
+SELECT nombre, salario FROM funcionarios
 WHERE departamento='Vendas' AND salario>= '6000';
 
 // Crie uma tabela chamada projetos com as colunas: id_projeto (int, chave primária), 
