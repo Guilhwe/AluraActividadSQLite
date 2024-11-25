@@ -93,7 +93,27 @@ CREATE TABLE clases_alumnos
  FOREIGN KEY (id_alumno) REFERENCES alumnos(id_alumno)
  );
 
+//*Tabela "Notas" guardará as notas dos alunos em diferentes disciplinas:
 
+ID da Nota: Um identificador único para cada nota.
+ID do Aluno: Uma chave estrangeira que faz referência ao aluno.
+ID da Disciplina: Uma chave estrangeira que faz referência à disciplina.
+Valor da Nota: A nota atribuída ao aluno na disciplina.
+Data da Avaliação: A data em que a avaliação foi realizada.*//
+
+CREATE TABLE notas
+(id_nota INT PRIMARY KEY,
+ id_alumno INT,
+ id_asignatura INT,
+ valor_nota FLOAT(2,2),
+ fecha_evaluacion DATE	,
+ FOREIGN KEY (id_asignatura) REFERENCES asignaturas (id_asignatura),
+ FOREIGN KEY (id_alumno) REFERENCES alumnos(id_alumno)
+ );
+ 
+ 
+ 
+                     
  
  
  
