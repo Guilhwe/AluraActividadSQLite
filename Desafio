@@ -51,6 +51,22 @@ CREATE TABLE asignaturas
  id_profesor int,
  FOREIGN KEY (id_profesor) REFERENCES profesores (id_profesor)
  );
+
+//*Tabela "Turmas" será usada para registrar turmas específicas:
+
+ID da Turma: Um identificador único para cada turma.
+Nome da Turma: O nome ou código da turma.
+Ano Letivo: O ano letivo da turma.
+ID do Professor Orientador: Uma chave estrangeira que faz referência ao professor que orienta a turma.*//
+
+CREATE TABLE clases
+(id_clase INT PRIMARY KEY,
+ nombre_clase VARCHAR (50),
+ año_lectivo INT ,
+ id_tutor int,
+ FOREIGN KEY (id_tutor) REFERENCES profesores (id_profesor)
+ );
+ 
  
  
  
