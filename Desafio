@@ -17,3 +17,22 @@ CREATE TABLE alumnos
  telefono VARCHAR(25),
  email VARCHAR (100)
  );
+
+//*Tabela "Professores" conterá detalhes sobre os professores da escola:
+
+ID do Professor: Um identificador único para cada professor.
+Nome do Professor: O nome completo do professor.
+Data de Nascimento: A data de nascimento do professor.
+Gênero: O gênero do professor.
+Telefone de Contato: O número de telefone de contato do professor.*//
+
+CREATE TABLE profesores
+(id_profesor INT PRIMARY KEY,
+ nombre_profesor VARCHAR (200),
+ fecha_nacimiento_profesor DATE,
+ genero CHECK (genero IN ('masculino', 'femenino', 'otro')),
+ telefono_profesor VARCHAR(25),
+ email_profesor VARCHAR (100)
+ );
+
+
