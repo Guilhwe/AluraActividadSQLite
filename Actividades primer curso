@@ -30,7 +30,7 @@ nombre,
 cargo,
 departamento,
 fecha_de_contratacion,
-salario)
+salario);
 
 VALUES(
 '32D',
@@ -39,6 +39,9 @@ VALUES(
 'TI',
 '2023-10-24',
 '6000,00');
+
+
+
 
 
 
