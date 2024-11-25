@@ -36,3 +36,22 @@ CREATE TABLE profesores
  );
 
 
+//*Tabela "Disciplinas" manterá registros das matérias oferecidas, incluindo:
+
+ID da Disciplina: Um identificador único para cada disciplina.
+Nome da Disciplina: O nome da disciplina.
+Descrição: Uma descrição da disciplina.
+Carga Horária: A carga horária da disciplina.
+ID do Professor: Uma chave estrangeira que faz referência ao professor que leciona a disciplina.*//
+
+CREATE TABLE asignaturas
+(id_asignatura INT PRIMARY KEY,
+ descripcion TEXT,
+ carga_horaria INT,
+ id_profesor int,
+ FOREIGN KEY (id_profesor) REFERENCES profesores (id_profesor)
+ );
+ 
+ 
+ 
+
