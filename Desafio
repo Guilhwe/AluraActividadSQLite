@@ -1,0 +1,19 @@
+1//*Tabela "Alunos" armazenará informações sobre os estudantes, como:
+
+ID do Aluno: Um identificador único para cada aluno.
+Nome do Aluno: O nome completo do aluno.
+Data de Nascimento: A data de nascimento do aluno.
+Gênero: O gênero do aluno (masculino, feminino, outros).
+Endereço: O endereço do aluno.
+Telefone de Contato: O número de telefone de contato do aluno.
+E-mail: O endereço de e-mail do aluno.*//
+
+CREATE TABLE alumnos 
+(id_alumno INT PRIMARY KEY,
+ nombre_alumno VARCHAR (200),
+ fecha_nacimiento DATE,
+ genero CHECK (genero IN ('masculino', 'femenino', 'otro')),
+ direccion VARCHAR (300),
+ telefono VARCHAR(25),
+ email VARCHAR (100)
+ );
