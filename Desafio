@@ -12,7 +12,7 @@ CREATE TABLE alumnos
 (id_alumno INT PRIMARY KEY,
  nombre_alumno VARCHAR (200),
  fecha_nacimiento DATE,
- genero CHECK (genero IN ('masculino', 'femenino', 'otro')),
+ genero VARCHAR (20),
  direccion VARCHAR (300),
  telefono VARCHAR(25),
  email VARCHAR (100)
@@ -30,7 +30,7 @@ CREATE TABLE profesores
 (id_profesor INT PRIMARY KEY,
  nombre_profesor VARCHAR (200),
  fecha_nacimiento_profesor DATE,
- genero CHECK (genero IN ('masculino', 'femenino', 'otro')),
+ genero VARCHAR(20),
  telefono_profesor VARCHAR(25),
  email_profesor VARCHAR (100)
  );
