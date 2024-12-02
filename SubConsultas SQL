@@ -1,0 +1,19 @@
+Você é um professor e deseja identificar o aluno que obteve a maior nota em sua disciplina. Você tem duas tabelas em seu banco de dados: "Alunos" e "Notas". A tabela "Notas" registra as notas dos alunos em sua disciplina. Seu desafio é encontrar o aluno com a maior nota.
+
+Tabela "Alunos":
+
+ID_aluno (chave primária)
+Nome
+Curso
+Tabela "Notas":
+
+ID_nota (chave primária)
+ID_aluno (chave estrangeira)
+Nota
+Seu desafio é criar uma consulta SQL que retorne o nome do aluno que obteve a maior nota em sua disciplina.
+
+SELECT nome FROM Alunos
+where id_aluno=
+(select id_aluno 
+FROM Notas WHERE nota=
+(SELECT MAX(NOTA) FROM Notas));
