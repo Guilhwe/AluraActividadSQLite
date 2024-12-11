@@ -13,7 +13,7 @@ Nota
 Seu desafio é criar uma consulta SQL que retorne o nome do aluno que obteve a maior nota em sua disciplina.
 
 SELECT nome FROM Alunos
-where id_aluno=
+WHERE id_aluno=
 (select id_aluno 
 FROM Notas WHERE nota=
 (SELECT MAX(NOTA) FROM Notas));
@@ -54,23 +54,23 @@ GROUP BY c.nombre;
 
 Traga todos os dados da cliente Maria Silva.
 
-select * from clientes
-where nome = 'Maria Silva';
+SELECT * FROM clientes
+WHERE nome = 'Maria Silva';
 
 Busque o ID do pedidov e o ID do cliente dos pedidos onde o status esteja como entregue.
 
 SELECT id,idcliente
-from pedidos where status ='entregue';
+FROM pedidos WHERE status ='entregue';
 
 Retorne todos os produtos onde o preço seja maior que 10 e menor que 15.
 
 SELECT * from produtos
-where preco > 10 AND preco <15;
+WHERE preco > 10 AND preco <15;
 
 Busque o nome e cargo dos colaboradores que foram contratados entre 2022-01-01 e 2022-06-31.
 
 SELECT nombre, cargo FROM colaboradores
-where datacontratacao BETWEEN '2022-01-01' AND '2022-06-31';
+WHERE datacontratacao BETWEEN '2022-01-01' AND '2022-06-31';
 
 Recupere o nome do cliente que fez o primeiro pedido.
 
@@ -95,3 +95,34 @@ WHERE p.datahorapedido
 BETWEEN '2023-01-01' AND '2023-01-31';
 
 Recupere os nomes dos produtos que estão em menos de 15 pedidos.
+
+SELECT p.nombre
+From produtos p
+INNER JOIN intensPedidos ip
+on p.id = ip.idProduto
+GROUP BY p.nombre
+HAVING COUNT <15;
+
+Liste os produtos e o ID do pedido que foram realizados pelo cliente "Pedro Alves" ou pela cliente "Ana Rodrigues".
+
+SELECT p.nombre, ip.idpedido
+FROM produtos p 
+INNER JOIN itensPedidos ip
+ON p.id =ip.idproduto
+INNER JOIN pedidos ped 
+ON ip.idpedido = ped.id
+INNER JOIN clientes c 
+ON ped.idcliente = c.id
+WHERE c.nombre = 'Pedro Alves' OR c.nombre = 'Ana Rodrigues');
+
+Recupere o nome e o ID do cliente que mais comprou(valor) no Serenatto.
+
+SELECT ped.idCliente, c.nome, SUM(ip.quantidade * ip.precounitario) as Valortotal 
+FROM clientes c 
+INNER JOIN pedidos ped 
+ON c.id = ped.idcliente 
+INNER JOIN itensPedido ip 
+ON ped.id = ip.idpedido 
+GROUP BY ped.idCliente 
+ORDER BY Valortotal DESC 
+LIMIT 1;
